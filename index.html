@@ -1,108 +1,168 @@
-​
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
-		<meta charSet="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta http-equiv="Cache-Control" content="no-transform" />
-		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<meta name="referrer" content="never">
-		<meta name="renderer" content="webkit" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>小姐姐在线随机播放</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>春光乍泄 蝶影留痕 | CP.</title>
+		<style>
+			body {
+				margin: 0;
+				font-family: Arial, sans-serif;
+				color: #fff;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				text-align: center;
+				background: url('tp.jpg') no-repeat center center fixed;
+				background-size: cover;
+				overflow: hidden;
+			}
+
+			.container {
+				padding: 20px;
+				width: 80%;
+				max-width: 600px;
+				border-radius: 30px;
+				background: rgba(0, 0, 0, 0);
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+				margin: 20px;
+			}
+
+			.profile-pic {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				object-fit: cover;
+				border: 2px solid #fff;
+				margin-top: 20px;
+			}
+
+			.name {
+				font-size: 2.5em;
+				font-weight: bold;
+				margin: 20px 0 10px;
+			}
+
+			.subtitle {
+				font-size: 1.2em;
+				font-weight: 300;
+				margin: 10px 0;
+			}
+
+			.welcome-message {
+				font-size: 1em;
+				font-weight: 300;
+				margin: 10px 0 20px;
+			}
+
+			.navigation {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin: 20px 0;
+			}
+
+			.navigation button {
+				font-size: 1em;
+				padding: 10px 20px;
+				margin: 5px;
+				border: 2px solid #fff;
+				border-radius: 30px;
+				background-color: transparent;
+				color: white;
+				cursor: pointer;
+				transition: background-color 0.3s, color 0.3s;
+				flex: 1 1 calc(50% - 10px);
+				max-width: calc(50% - 10px);
+			}
+
+			.navigation button:hover {
+				background-color: white;
+				color: black;
+			}
+
+			footer {
+				margin-top: 20px;
+				font-size: 0.8em;
+			}
+
+			@media (max-width: 600px) {
+				.name {
+					font-size: 2em;
+				}
+
+				.subtitle,
+				.welcome-message {
+					font-size: 1em;
+				}
+
+				.navigation button {
+					font-size: 0.9em;
+					padding: 8px 15px;
+					flex: 1 1 calc(80% - 10px);
+					max-width: calc(80% - 10px);
+				}
+			}
+
+			.cherry-blossom {
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				background: radial-gradient(circle, pink 35%, transparent 40%);
+				border-radius: 50%;
+				pointer-events: none;
+				animation: fall linear infinite;
+				opacity: 0.8;
+			}
+
+			@keyframes fall {
+				0% {
+					transform: translateY(-100px) rotate(0deg);
+					opacity: 1;
+				}
+
+				100% {
+					transform: translateY(100vh) rotate(360deg);
+					opacity: 0;
+				}
+			}
+		</style>
 	</head>
-
-	<style type="text/css">
-		* {
-			border: 0;
-			margin: 0;
-			padding: 0;
-			outline: none;
-			box-sizing: border-box;
-		}
-
-		body {
-			background: #FFC0CB;
-			width: 100vw;
-			height: 100vh;
-			overflow: hidden;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-
-		#main {
-			height: calc(90vh - 60px);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		#player {
-			width: 85%;
-			height: auto;
-			max-height: 95%;
-		}
-
-		#buttons {
-			height: 60px;
-			padding: 10px;
-		}
-
-		#switch,
-		#next,
-		#dijia {
-			background: #FFF;
-			background: linear-gradient(to bottom, #00BFFF, #00BFFF);
-			color: #AF2E08;
-			font-size: 18px;
-			font-weight: bold;
-			height: 40px;
-			padding: 0px 15px;
-			margin: 2px 5px;
-			border-radius: 15px;
-		}
-	</style>
-
 	<body>
+		<div class="container">
+			<header>
+				<img src="tp.jpg" class="profile-pic">
+				<h1 class="name">CP.</h1>
+				<p class="subtitle">春光乍泄，蝶影留痕.<br>The spring light bursts forth, leaving traces of butterflies dancing.
+				</p>
+				<p class="welcome-message">Welcome To<br>My Site</p>
+			</header>
+			<nav class="navigation">
+				<button onclick="location.href='v/index.html'">随机短视频</button>
+			</nav>
+			<footer>
+				<p>CopyRight © 2024 CP. All Rights Reserved.</p>
+			</footer>
+		</div>
 
-		<section id="main">
-			<video id="player" src="http://www.xfubk.com/api.php" controls webkit-playsinline playsinline></video>
-		</section>
-		<section id="buttons">
-			<button id="switch">连续: 开</button>
-			<button id="next">播放下一个</button>
-		</section>
 		<script>
-			(function(window, document) {
-				if (top != self) {
-					window.top.location.replace(self.location.href);
-				}
-				var get = function(id) {
-					return document.getElementById(id);
-				}
-				var bind = function(element, event, callback) {
-					return element.addEventListener(event, callback);
-				}
-				var auto = true;
-				var player = get('player');
-				var randomm = function() {
-					player.src = 'http://www.xfubk.com/api.php?_t=' + Math.random();
-					player.play();
-				}
-				bind(get('next'), 'click', randomm);
-				bind(player, 'error', function() {
-					randomm();
-				});
-				bind(get('switch'), 'click', function() {
-					auto = !auto;
-					this.innerText = '连续: ' + (auto ? '开' : '关');
-				});
-				bind(player, 'ended', function() {
-					if (auto) randomm();
-				});
-			})(window, document);
+			function createBlossom() {
+				const blossom = document.createElement('div');
+				blossom.classList.add('cherry-blossom');
+				blossom.style.left = Math.random() * window.innerWidth + 'px';
+				blossom.style.animationDuration = (Math.random() * 3 + 2) + 's';
+				blossom.style.opacity = Math.random() * 0.5 + 0.5;
+				blossom.style.width = blossom.style.height = (Math.random() * 10 + 5) + 'px';
+				document.body.appendChild(blossom);
+
+				setTimeout(() => {
+					blossom.remove();
+				}, 5000);
+			}
+
+			setInterval(createBlossom, 200);
 		</script>
 	</body>
 </html>
